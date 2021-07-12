@@ -1,0 +1,48 @@
+﻿@model ASPNETCOREMVC.ViewModels.RegisseurStatVM
+@{
+    ViewData["Title"] = "SampleWithViewModel";
+}
+
+<h1>SampleWithViewModel</h1>
+
+<p>Regisseur: </p>
+<p>@Model.Regisseur.Id</p>
+<p>@Model.Regisseur.Name</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieList[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieList[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieList[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieList[0].Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Movie currentMovie in Model.MovieList)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => currentMovie.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => currentMovie.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => currentMovie.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => currentMovie.Price)
+            </td>
+        </tr>
+            }
+    </tbody>
+</table>

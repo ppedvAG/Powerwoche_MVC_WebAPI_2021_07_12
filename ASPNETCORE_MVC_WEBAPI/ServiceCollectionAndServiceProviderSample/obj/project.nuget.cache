@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZqKVLE4Ic8enKsg2JKpo1W6wFdXzN3YeEfArCXZgjOBHuVKUZp75573d03zAlhJiwGm2fp+CQ2OO4HehuFj6cg==",
+  "success": true,
+  "projectFilePath": "C:\\Aktueller Kurs\\Powerwoche_MVC_WebAPI_2021_07_12\\ASPNETCORE_MVC_WEBAPI\\ServiceCollectionAndServiceProviderSample\\ServiceCollectionAndServiceProviderSample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kw4\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
+    "C:\\Users\\kw4\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

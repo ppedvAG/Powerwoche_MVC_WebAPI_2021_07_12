@@ -1,0 +1,279 @@
+﻿@model ASPNETCOREMVC.Models.Person[]
+@using ASPNETCOREMVC.Models;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@* 1.) Einfache Ausgabe *@
+<p>Anzahl der Datensätze: @Model.Count()</p>
+
+@* Verwenden Sie ein zweites @-Symbol, um im Razor-Markup ein @-Symbol mit Escapezeichen zu versehen: *@
+<p>@@Model.Count()</p>
+
+@* 2.)Implizite Razor-Ausdrücke - Implizite Razor-Ausdrücke beginnen mit @ gefolgt von C#-Code: *@
+<p>@DateTime.Now</p>
+<p>@DateTime.IsLeapYear(2016)</p>
+
+
+
+@* 3.) Explizite Razor-Ausdrücke  - Explizite Razor-Ausdrücke bestehen aus einem @-Symbol mit ausgeglichener Klammer. *@
+<p>Last week this time: @(DateTime.Now - TimeSpan.FromDays(7))</p>
+
+
+@{
+    var mitarbeiterDesMonats = new Person("Joe", 33);
+}
+
+<p>Age@(mitarbeiterDesMonats.Age)</p>
+
+
+
+@* 3.3 Explizite Ausdrücke und generische Methoden
+    Explizite Ausdrücke können zum Rendern der Ausgabe von generischen Methoden in .cshtml-Dateien verwendet werden.
+    Das folgende Markup zeigt, wie der weiter oben gezeigte Fehler behoben wird, der durch die Klammern einer
+    generischen C#-Funktion verursacht wurde.
+
+    Der Code wird als expliziter Ausdruck geschrieben:
+
+
+    Ist eine Erweiterung der CodeBehind Datei*@
+
+<p>@(GenericMethod<int>())</p>
+
+@functions{
+    public string GenericMethod<T>()
+    {
+        return "a type";
+    }
+}
+
+@* 4.0 Codieren von Ausdrücken *@
+
+@* C#-Ausdrücke, die als Zeichenfolge ausgewertet werden, werden HTML-codiert.
+    C#-Ausdrücke, die als IHtmlContent ausgewertet werden, werden direkt durch IHtmlContent.WriteTo gerendert.
+    C#-Ausdrücke, die nicht als IHtmlContent ausgewertet werden, werden durch ToString in eine Zeichenfolge konvertiert und vor dem Rendern codiert. *@
+
+@* 4.1 Beispiel: *@
+@("<span>Hello World</span>")
+@* &lt;span&gt;Hello World&lt;/span&gt; *@
+
+
+
+@* 4.2 HtmlHelper.Raw
+    Die Ausgabe HtmlHelper.Raw wird nicht codiert, sondern als HTML-Markup gerendert. *@
+
+@Html.Raw("<span>Hello World</span>")
+@* Warnung
+    Die Verwendung von HtmlHelper.Raw bei einer nicht bereinigten Benutzereingabe stellt ein Sicherheitsrisiko dar.
+    Benutzereingaben können schädlichen JavaScript-Code oder andere Sicherheitsrisiken enthalten.
+    Das Bereinigen von Benutzereingaben ist schwierig.
+    ermeiden Sie daher die Verwendung von HtmlHelper.Raw bei Benutzereingaben. *@
+
+@* 5.0 Razor-Codeblöcke *@
+
+@{
+    var quote = "The future depends on what you do today. - Mahatma Gandhi";
+}
+
+<p>@quote</p>
+
+
+
+@* 5.1Deklarieren Sie in Codeblöcken lokale Funktionen mit Markup als Vorlagenmethoden:
+*@
+
+@{
+
+
+
+
+    void RenderName(string name)
+    {
+        <p>Name: <strong>@name</strong></p>
+    }
+    
+    RenderName("Mahatma Gandhi");
+    RenderName("Martin Luther King, Jr.");
+}
+
+
+
+@for (int y = 0; y < Model.Count(); y++)
+{
+    var person = Model[y];
+
+
+    <text>Name: @person.Name</text>
+    <text>Alter: @person.Age</text>
+}
+
+
+@* 7.0 Steuerungsstrukturen *@
+
+@functions {
+    private int value = 2;
+
+    private object obj = new object();
+
+}
+
+@if (value % 2 == 0)
+{
+    <p>The value was even.</p>
+}
+
+
+@* 7.1.2 else und else if erfordern kein @-Symbol: *@
+@if (value % 2 == 0)
+{
+    <p>The value was even.</p>
+}
+else if (value >= 1337)
+{
+    <p>The value is large.</p>
+}
+else
+{
+    <p>The value is odd and small.</p>
+}
+
+
+@*  7.1.3 switch-Anweisung *@
+@switch (value)
+{
+    case 1:
+        <p>The value is 1!</p>
+        break;
+    case 1337:
+        <p>Your number is 1337!</p>
+        break;
+    default:
+        <p>Your number wasn't 1 or 1337.</p>
+        break;
+}
+
+@{
+    var myPeople = new Person[]
+    {
+          new Person("Weston", 33),
+          new Person("Johnathon", 41),
+                                                                            }; };
+}
+
+
+@* 7.2.1    Die folgenden Schleifenanweisungen werden unterstützt: *@
+@* @for *@
+@for (var a = 0; a < myPeople.Length; a++)
+{
+    var person = myPeople[a];
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+}
+
+
+
+
+@* 7.2.2 @foreach *@
+@foreach (var person in myPeople)
+{
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+}
+
+
+@* 7.2.3 @while *@
+@{var i = 0; }
+@while (i < myPeople.Length)
+{
+    var person = myPeople[i];
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+
+    i++;
+}
+
+@* 7.2.4 @do while *@
+
+@{i = 0; }
+@do
+{
+    var person = myPeople[i];
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+
+    i++;
+} while (i < myPeople.Length);
+
+
+<!-- Formular -->
+@using (Html.BeginForm())
+{
+    <div>
+        Email: <input type="email" id="Email" value="">
+        <button>Register</button>
+    </div>
+} //Dispose
+
+
+
+@* 7.4 @try, catch, finally
+
+*@
+@try
+{
+    throw new InvalidOperationException("You did something invalid.");
+}
+catch (Exception ex)
+{
+    <p>The exception message: @ex.Message</p>
+}
+finally
+{
+    <p>The finally statement.</p>
+}
+
+
+
+
+@* 7.5 @lock *@
+@lock (obj)
+{
+    // Do critical section work
+}
+
+
+@implements IDisposable
+
+<h1>Example</h1>
+
+@functions {
+    private bool _isDisposed;
+
+    public void Dispose()
+    {
+        _isDisposed = true;
+    }
+}
+
+
+
+@using DependencyInversionSample
+@inject IMockCar myMockCar
+
+
+<p>@myMockCar.Marke</p>
+<p>@myMockCar.Model</p>
+<p>@myMockCar.ConstructionYear</p>
+
+
+@section Scripts {
+    <script type="text/javascript" src="~/scripts/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            alert("Test");
+        });
+    </script>
+}

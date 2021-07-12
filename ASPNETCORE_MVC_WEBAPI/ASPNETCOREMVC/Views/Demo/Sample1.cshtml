@@ -1,0 +1,12 @@
+﻿@model DependencyInversionSample.MockCar
+@{
+    ViewData["Title"] = "Sample1";
+}
+
+<h1>Sample1</h1>
+
+<p>Id: @Model.Id</p>
+<p>Marke: @Model.Marke</p>
+<p>Modell: @Model.Model</p>
+<p>Erbaut: @Model.ConstructionYear.ToShortDateString();</p>
+

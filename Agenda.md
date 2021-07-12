@@ -10,12 +10,10 @@
 - [ ] MVC
 - [ ] Einbinden einer HotReload Middleware
 
-
 Tag2:
 
 Dependency Injcetion + Konfigurationen
 - [ ] Logging 
-
 Die Controller-Klasse (MVC)
 - [ ] Überblick über HTTPContext und Controller-Basisklasse
 - [ ] QueryString bei Get-Methoden
