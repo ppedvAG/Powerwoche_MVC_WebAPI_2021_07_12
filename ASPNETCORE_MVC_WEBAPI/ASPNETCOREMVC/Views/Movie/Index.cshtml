@@ -2,9 +2,24 @@
 
 @{
     ViewData["Title"] = "Index";
+
+    string searchQuery = string.Empty;
+
+    if (ViewData["FilterQuery"] == null)
+        searchQuery = string.Empty;
+    else
+        searchQuery = ViewData["FilterQuery"].ToString();
 }
 
 <h1>Index</h1>
+
+<partial name="_SpecialOfferPartialView" />
+
+<form asp-controller="Movie" asp-action="Index" method="get">
+    <p>Title: <input type="text" name="query" value='@searchQuery' /> </p>
+    <input type="submit" value="Filter" />
+</form>
+
 
 <p>
     <a asp-action="Create">Create New</a>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ASPNETCOREMVC.Models.Movie>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Movie movieWithLowestPrice = null;
+
+    if (Model.Any())
+    {
+        movieWithLowestPrice = Model.OrderBy(o => o.Price).First();
+    }
+}
+
+@if (movieWithLowestPrice != null)
+{
+    <p>Sonderangebot</p>
+    <div class="card" style="background-color: darkorange">
+        <div class="card-body">
+            <p>@movieWithLowestPrice.Title</p>
+            <p>@movieWithLowestPrice.Price</p>
+        </div>
+    </div>
+}
+else
+{
+    <p>Aktuell kein Sonderangebot aus gefilterten Sortiment verfügbar</p>
+}

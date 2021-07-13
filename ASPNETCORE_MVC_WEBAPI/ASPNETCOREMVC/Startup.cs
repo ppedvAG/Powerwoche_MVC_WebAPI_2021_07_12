@@ -86,11 +86,15 @@ namespace ASPNETCOREMVC
 
             app.UseAuthorization();
 
-
+            AppDomain.CurrentDomain.SetData("BildVerzeichnis", env.WebRootPath);
 
             // Wenn wir AddControllersWithViews verwenden, ben�tigen wir f�r MVC Request folgenden Endpoint. 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "movie",
+                    pattern: "movie/{*movie}", defaults: new { controller = "Movie", action = "Index" });
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

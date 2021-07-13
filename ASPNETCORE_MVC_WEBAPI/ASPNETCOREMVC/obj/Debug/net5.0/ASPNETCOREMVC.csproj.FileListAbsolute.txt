@@ -465,3 +465,7 @@ C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETC
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\Movie\Edit.cshtml.g.cs
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\Movie\Index.cshtml.g.cs
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\bin\Debug\net5.0\libman.json
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\Photo\UploadPicture.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\Photo\PictureGallery.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\Shared\_Zeit.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\Shared\_SpecialOfferPartialView.cshtml.g.cs

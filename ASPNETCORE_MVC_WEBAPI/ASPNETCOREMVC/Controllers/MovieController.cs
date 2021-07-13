@@ -20,12 +20,22 @@ namespace ASPNETCOREMVC.Controllers
         }
 
         // GET: Movie
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string query)
         {
-            return View(await _context.Movie.ToListAsync());
+            if (!string.IsNullOrEmpty(query))
+            {
+                ViewData["FilterQuery"] = query;
+            }
+
+            IList<Movie> filteredList = string.IsNullOrEmpty(query) ?
+                await _context.Movie.ToListAsync() :
+                await _context.Movie.Where(q => q.Title.Contains(query)).ToListAsync();
+
+            return View(filteredList);
         }
 
         // GET: Movie/Details/5
+        [HttpGet("/movie/details/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +54,8 @@ namespace ASPNETCOREMVC.Controllers
         }
 
         // GET: Movie/Create
+        //[Route("/movie/create")]
+        [HttpGet("/movie/create")]
         public IActionResult Create()
         {
             return View();
@@ -52,7 +64,7 @@ namespace ASPNETCOREMVC.Controllers
         // POST: Movie/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost("/movie/create")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Description,Genre,Price")] Movie movie)
         {
@@ -72,7 +84,8 @@ namespace ASPNETCOREMVC.Controllers
             return View(movie);
         }
 
-        // GET: Movie/Edit/5
+        // GET: Movie/Edit/
+        [HttpGet("/movie/edit/{id}")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -91,7 +104,7 @@ namespace ASPNETCOREMVC.Controllers
         // POST: Movie/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost("/movie/edit/{id}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Genre,Price")] Movie movie)
         {
@@ -124,6 +137,7 @@ namespace ASPNETCOREMVC.Controllers
         }
 
         // GET: Movie/Delete/5
+        [HttpGet("/movie/delete/{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -142,7 +156,7 @@ namespace ASPNETCOREMVC.Controllers
         }
 
         // POST: Movie/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost("/movie/Delete/{id}"), ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

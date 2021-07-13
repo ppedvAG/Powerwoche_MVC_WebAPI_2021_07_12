@@ -6,6 +6,11 @@
 
 <h1>Index</h1>
 
+
+<p>Ausgabe einer PartialView</p>
+<partial name="_Zeit" /> <!-- Er sucht in View\Shared -->
+@Html.PartialAsync("_Zeit");
+
 @* 1.) Einfache Ausgabe *@
 <p>Anzahl der Datensätze: @Model.Count()</p>
 

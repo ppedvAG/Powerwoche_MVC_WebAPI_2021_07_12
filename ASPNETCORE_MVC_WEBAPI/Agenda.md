@@ -24,36 +24,43 @@ Die Controller-Klasse (MVC)
 - [x] HTML-Helper (liegt in RazorSamplesController)
 - [x] TagHelpers  (liegt in RazorSamplesController)
 
+- [x] Data Annotations 
+- [x] Validierung (Client/Serverseitig)
+- [x] Gehen Geldbeträge mit Komma?
+- [x] FluentAPI erklärt (als alternative zu DataAnnotations)
+- [x] Bild-Upload Formular + einfache Darstellung von Bildern 
 
-- [ ] Data Annotations 
-- [ ] Validierung 
-- [ ] Gehen Geldbeträge mit Komma?
+- Routing (15Minuten)
+- [x] Konventionelles Routing
+- [x] Attribute Routing
 
-State-Management
+
+EF Core Einstieg 
+- [ ] Code First / Code First Reverse
+- [ ] Repository / UnitOfWork Pattern in EF
+- [x] Add-Migration + Update-Database im Bezug auf eine DBContext 
+
+State-Management (1Std) 
 - [ ] Überblick über HTTPContext und Controller-Basisklasse
 - [ ] ViewData////
 - [ ] ViewBag
 - [ ] TempData
 - [ ] Session-Handling -> Bauen einen Warenkorb (mit Artikel entfernen)
 
-Weitere Views
-- [ ] PartialView
-- [ ] ViewComponents & Localization -> Referenz Projekte anschauen
-- [ ] Identity UI in ASP.NET Core MVC -> weitere UseCases zu PartialView
 
-- Routing
-- [ ] Konventionelles Routing
-- [ ] Attribute Routing
-- [ ] Middleware -> Was ist ein Pipeline (Use, Run, Map)
+Weitere Views (Mittwoch)
+- [x] PartialView
+- [ ] ViewComponents & Localization -> Referenz Projekte anschauen () (20Min) 
+- [ ] Identity UI in ASP.NET Core MVC -> weitere UseCases zu PartialView (20 Min)
+
+
+
+- [ ] Middleware -> Was ist ein Pipeline (Use, Run, Map) (1 stunde)
 - [ ] Customize Middleware für formatierte Bildausgaben (Gallery)+ In Verbindung mit einem Bild-Upload-Formular
-
 - [ ] Filter -> https://docs.microsoft.com/de-de/aspnet/core/mvc/controllers/filters?view=aspnetcore-5.0#resource-filters
 - [ ] AuthorisationFilter Sample (Read and Write Sample)
 
-- [ ] EF Core Einstieg 
-  - [ ] Code First / Code First Reverse
-  - [ ] Repository / UnitOfWork Pattern in EF
-  - [ ] Add-Migration + Update-Database im Bezug auf eine DBContext 
+
 
 
 WebAPI:
