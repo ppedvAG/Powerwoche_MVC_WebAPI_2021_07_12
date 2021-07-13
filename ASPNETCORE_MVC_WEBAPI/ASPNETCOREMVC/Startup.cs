@@ -1,4 +1,4 @@
-using ASPNETCOREMVC.Models;
+ï»¿using ASPNETCOREMVC.Models;
 using DependencyInversionSample;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,12 +11,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Westwind.AspNetCore.LiveReload;
+using Microsoft.EntityFrameworkCore;
+using ASPNETCOREMVC.Data;
 
 namespace ASPNETCOREMVC
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration) //IConfiguration repräsentiert die AppSetting.json im Arbeitsspeicher
+        public Startup(IConfiguration configuration) //IConfiguration reprï¿½sentiert die AppSetting.json im Arbeitsspeicher
         {
             Configuration = configuration;
         }
@@ -29,23 +31,23 @@ namespace ASPNETCOREMVC
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
 
-            //MVC wird hier zum ASP.NET Core Projekt hinzugefügt
-            //Wenn wir AddController with View verwenden -> benötigt das Programm folgende Ordner:
+            //MVC wird hier zum ASP.NET Core Projekt hinzugefï¿½gt
+            //Wenn wir AddController with View verwenden -> benï¿½tigt das Programm folgende Ordner:
             //Views Verzeichnis
             //Controllers Verzeichnis
             //Models Verzeichnis
 
             //Wir binden jetzt unsere Car-Library in unser MVC Project hinzu (funktioniert auch in WebAPI und RazorPages)
-            services.AddSingleton<IMockCar, MockCar>(); //Wann nimmt man Singleton -> Bei großen Objekten mit langer Initialisierungszeit 
+            services.AddSingleton<IMockCar, MockCar>(); //Wann nimmt man Singleton -> Bei groï¿½en Objekten mit langer Initialisierungszeit 
             
             
             //services.AddTransient<ICar, Car>(); //Request bezogene Techniken
             //services.AddScoped<ICar, Car>(); //Request bezogene Techniken
 
 
-            //services.AddRazorPages();           // Razor Page Logik wird hier hinzugefügt. -> Es wird ein Page Verzeichnis benötigt
+            //services.AddRazorPages();           // Razor Page Logik wird hier hinzugefï¿½gt. -> Es wird ein Page Verzeichnis benï¿½tigt
 
-            //services.AddControllers();           //WebAPI benötigt nur ein Controller-Verzeichnis
+            //services.AddControllers();           //WebAPI benï¿½tigt nur ein Controller-Verzeichnis
 
 
             //services.AddMvc(); //Intern wird .AddControllersWithViews() + .AddRazorPages();      
@@ -54,15 +56,18 @@ namespace ASPNETCOREMVC
             services.Configure<SampleWebSettings>(Configuration);
 
             services.AddLiveReload();
+
+            services.AddDbContext<MovieDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("MovieDbContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            if (env.IsDevelopment()) //Für Entwickler 
+            if (env.IsDevelopment()) //Fï¿½r Entwickler 
             {
-                app.UseDeveloperExceptionPage(); //Detailierte Fehlermeldungausgabe für Entwickler
+                app.UseDeveloperExceptionPage(); //Detailierte Fehlermeldungausgabe fï¿½r Entwickler
                 app.UseLiveReload();
             }
             else
@@ -83,7 +88,7 @@ namespace ASPNETCOREMVC
 
 
 
-            // Wenn wir AddControllersWithViews verwenden, benötigen wir für MVC Request folgenden Endpoint. 
+            // Wenn wir AddControllersWithViews verwenden, benï¿½tigen wir fï¿½r MVC Request folgenden Endpoint. 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
