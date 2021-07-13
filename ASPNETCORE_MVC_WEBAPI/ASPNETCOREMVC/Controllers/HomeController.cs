@@ -14,13 +14,15 @@ namespace ASPNETCOREMVC.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, ICar car)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Zeige Home-Index an");
+            _logger.LogError("Zeige Home-Index an");
             return View();
         }
 

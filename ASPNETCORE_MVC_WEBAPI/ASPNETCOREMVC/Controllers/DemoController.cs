@@ -11,9 +11,9 @@ namespace ASPNETCOREMVC.Controllers
 {
     public class DemoController : Controller
     {
-        private readonly ICar _car;
+        private readonly IMockCar _car;
 
-        public DemoController(ICar car)
+        public DemoController(IMockCar car)
         {
             _car = car; 
         }

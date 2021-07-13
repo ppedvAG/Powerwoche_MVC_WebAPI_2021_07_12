@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Westwind.AspNetCore.LiveReload;
 
 namespace ASPNETCOREMVC
 {
@@ -25,17 +26,20 @@ namespace ASPNETCOREMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) //Inversion of Control
         {
-            services.AddControllersWithViews(); //MVC wird hier zum ASP.NET Core Projekt hinzugefügt
-                                                //Wenn wir AddController with View verwenden -> benötigt das Programm folgende Ordner:
-                                                //Views Verzeichnis
-                                                //Controllers Verzeichnis
-                                                //Models Verzeichnis
+            services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation();
+
+            //MVC wird hier zum ASP.NET Core Projekt hinzugefügt
+            //Wenn wir AddController with View verwenden -> benötigt das Programm folgende Ordner:
+            //Views Verzeichnis
+            //Controllers Verzeichnis
+            //Models Verzeichnis
 
             //Wir binden jetzt unsere Car-Library in unser MVC Project hinzu (funktioniert auch in WebAPI und RazorPages)
             services.AddSingleton<IMockCar, MockCar>(); //Wann nimmt man Singleton -> Bei großen Objekten mit langer Initialisierungszeit 
             
             
-            services.AddTransient<ICar, Car>(); //Request bezogene Techniken
+            //services.AddTransient<ICar, Car>(); //Request bezogene Techniken
             //services.AddScoped<ICar, Car>(); //Request bezogene Techniken
 
 
@@ -48,14 +52,18 @@ namespace ASPNETCOREMVC
 
 
             services.Configure<SampleWebSettings>(Configuration);
+
+            services.AddLiveReload();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment()) //Für Entwickler 
             {
                 app.UseDeveloperExceptionPage(); //Detailierte Fehlermeldungausgabe für Entwickler
+                app.UseLiveReload();
             }
             else
             {
@@ -64,6 +72,8 @@ namespace ASPNETCOREMVC
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //Allgemeine Konfiguration
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -71,6 +81,9 @@ namespace ASPNETCOREMVC
 
             app.UseAuthorization();
 
+
+
+            // Wenn wir AddControllersWithViews verwenden, benötigen wir für MVC Request folgenden Endpoint. 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

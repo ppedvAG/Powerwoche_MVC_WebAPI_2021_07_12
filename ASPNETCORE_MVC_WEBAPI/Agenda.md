@@ -2,21 +2,22 @@
 - [x] Einführungs DI 
 - [x] DI-SDependencyInjectionSamplepecials -> Mocks, Entwickler - Prozess
 - [x] Dependency Injection / Seperation of Concerne (3 Stunden) 
-- [ ] Startup-Klasse
+- [x] Startup-Klasse
 - [x] IServiceCollection / ServiceProvider
 - [x] Konfigurationen einlesen
 
-- [ ] Präsentationsschicht (1 Stunde) 
-- [ ] Razor-Syntax / RazorEngine 
-- [ ] MVC
-- [ ] Einbinden einer HotReload Middleware
+- [x] Präsentationsschicht (1 Stunde) 
+- [x] Razor-Syntax / RazorEngine 
+- [0] MVC
+
 
 Tag2:
 
 Dependency Injcetion + Konfigurationen
-- [ ] Logging 
+- [x] Logging 
+- [x] Einbinden einer HotReload Middleware
 Die Controller-Klasse (MVC)
-- [ ] Überblick über HTTPContext und Controller-Basisklasse
+
 - [ ] QueryString bei Get-Methoden
 - [ ] Ein Formular mit mehren Buttons (Post-Methoden)
 - [ ] HTML-Helper
@@ -26,6 +27,7 @@ Die Controller-Klasse (MVC)
 - [ ] Gehen Geldbeträge mit Komma?
 
 State-Management
+- [ ] Überblick über HTTPContext und Controller-Basisklasse
 - [ ] ViewData////
 - [ ] ViewBag
 - [ ] TempData
