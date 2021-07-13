@@ -34,7 +34,7 @@ using DependencyInversionSample;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2ab513b8c2b0da031c56b86674393f4654c96fba", @"/Views/RazorSamples/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a78727764f6c6a989b69cc3a4f5c8e1d91b161e9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"49070ca63c06389e2b2840af86ef89c4ea528cd8", @"/Views/_ViewImports.cshtml")]
     public class Views_RazorSamples_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ASPNETCOREMVC.Models.Person[]>, IDisposable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", new global::Microsoft.AspNetCore.Html.HtmlString("text/javascript"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

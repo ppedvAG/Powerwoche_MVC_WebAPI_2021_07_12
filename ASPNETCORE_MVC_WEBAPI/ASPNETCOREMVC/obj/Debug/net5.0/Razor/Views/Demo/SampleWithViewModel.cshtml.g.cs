@@ -27,7 +27,7 @@ using ASPNETCOREMVC.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1a10b9a87d91cc1785ce4ddf5520a67886b46258", @"/Views/Demo/SampleWithViewModel.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a78727764f6c6a989b69cc3a4f5c8e1d91b161e9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"49070ca63c06389e2b2840af86ef89c4ea528cd8", @"/Views/_ViewImports.cshtml")]
     public class Views_Demo_SampleWithViewModel : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ASPNETCOREMVC.ViewModels.RegisseurStatVM>
     {
         #pragma warning disable 1998

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Sample3";
+}
+
+<h1>Sample3</h1>
+
+<form method="post">
+    <input type="text" id="txtMyName" name="myText" />
+    <input type="number" id="intMyNumber" name="myNumber" />
+
+
+    <input type="submit" asp-action="RegisterAny" value="Registriere" />
+    <input type="submit" asp-action="DoAnything" value="Mach Irgendwas" />
+</form>
+
+
+<form method="post">
+    <input type="text" id="txtMyName" name="myText" />
+    <input type="number" id="intMyNumber" name="myNumber" />
+    <input type="submit" value="Senden an Post-Methode" />
+</form>

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<form method="post" enctype="multipart/form-data" asp-controller="FormularDemo" asp-action="Index">
+    <table>
+        <tr>
+            <td>First Name: </td>
+            <td><input type="text" id="txtFirstName" name="FirstName" /></td>
+        </tr>
+        <tr>
+            <td>Last Name: </td>
+            <td><input type="text" id="txtLastName" name="LastName" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+    <hr />
+    @ViewBag.Name
+</form>
+

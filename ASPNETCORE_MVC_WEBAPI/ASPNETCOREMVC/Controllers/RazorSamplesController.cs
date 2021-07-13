@@ -19,5 +19,16 @@ namespace ASPNETCOREMVC.Controllers
 
             return View(myPersons.ToArray());
         }
+
+
+        public IActionResult HTMLTagHelperSample()
+        { 
+            return View();
+        }
+
+        public IActionResult CustomizeTagHelperSample()
+        {
+            return View();
+        }
     }
 }

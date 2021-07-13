@@ -15,9 +15,9 @@ namespace ASPNETCOREMVC.Controllers
 
         public DemoController(IMockCar car)
         {
-            _car = car; 
+            _car = car;
         }
-        
+
         public IActionResult Sample1()
         {
             return View(_car);
@@ -28,14 +28,14 @@ namespace ASPNETCOREMVC.Controllers
             Product product = new Product()
             {
                 Id = 123,
-                Name="Haribo",
+                Name = "Haribo",
                 Preis = 11.99m
             };
 
             return View(product);
         }
 
-        public IActionResult Sample3 ()
+        public IActionResult Sample3()
         {
             var products = new List<Product>()
             {
@@ -125,6 +125,25 @@ namespace ASPNETCOREMVC.Controllers
             });
 
             return View(regisseurStat);
+        }
+
+
+        public IActionResult RoutValuesWithQueryStringSample()
+        {
+            return View();
+        }
+
+        //Call mit QueryString -> https://localhost:5001/Demo/QueryStringDemo?id=1&name=harry
+        public IActionResult QueryStringDemo(int? id, string name)
+        {
+            return View();
+        }
+
+
+        [Route("sample5/{fullName}/{zahldesTages}")]
+        public IActionResult Sample5(string fullName, int zahldesTages)
+        {
+            return View();
         }
     }
 }

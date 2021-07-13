@@ -422,3 +422,11 @@ C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETC
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\bin\Debug\net5.0\Westwind.AspNetCore.LiveReload.dll
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\ASPNETCOREMVC.MvcApplicationPartsAssemblyInfo.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\Demo\QueryStringDemo.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\Demo\Sample5.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\FormularDemo\Index.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\FormularDemo\Sample1.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\FormularDemo\Sample2.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\FormularDemo\Sample3.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\RazorSamples\HTMLTagHelperSample.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\RazorSamples\CustomizeTagHelperSample.cshtml.g.cs

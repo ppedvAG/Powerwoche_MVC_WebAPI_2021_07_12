@@ -18,10 +18,13 @@ Dependency Injcetion + Konfigurationen
 - [x] Einbinden einer HotReload Middleware
 Die Controller-Klasse (MVC)
 
-- [ ] QueryString bei Get-Methoden
-- [ ] Ein Formular mit mehren Buttons (Post-Methoden)
-- [ ] HTML-Helper
-- [ ] TagHelpers
+- [x] QueryString bei Get-Methoden
+- [x] Ein Formular mit mehren Buttons (Post-Methoden)
+- [x] RouteValues
+- [x] HTML-Helper (liegt in RazorSamplesController)
+- [x] TagHelpers  (liegt in RazorSamplesController)
+
+
 - [ ] Data Annotations 
 - [ ] Validierung 
 - [ ] Gehen Geldbeträge mit Komma?
