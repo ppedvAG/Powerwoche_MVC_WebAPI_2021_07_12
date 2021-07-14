@@ -59,6 +59,8 @@ namespace ASPNETCOREMVC
 
             services.AddDbContext<MovieDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MovieDbContext")));
+
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -85,6 +87,8 @@ namespace ASPNETCOREMVC
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             AppDomain.CurrentDomain.SetData("BildVerzeichnis", env.WebRootPath);
 

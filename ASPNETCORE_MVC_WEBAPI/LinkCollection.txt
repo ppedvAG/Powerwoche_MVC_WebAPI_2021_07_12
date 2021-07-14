@@ -1,0 +1,7 @@
+EF Core:
+
+CodeFirst Reverse: https://docs.microsoft.com/de-de/ef/core/managing-schemas/scaffolding?tabs=dotnet-core-cli
+
+Repository Library -> https://github.com/SharpRepository/SharpRepository
+
+Ein schmales und schickes Repository Pattern: https://code-maze.com/net-core-web-development-part4/

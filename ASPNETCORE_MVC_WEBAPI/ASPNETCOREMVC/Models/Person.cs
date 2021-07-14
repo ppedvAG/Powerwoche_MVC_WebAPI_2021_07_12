@@ -19,5 +19,12 @@ namespace ASPNETCOREMVC.Models
             this.Name = Name;
             this.Age = Age;
         }
+
+        public Person(string Name, int Age, string email)
+        {
+            this.Name = Name;
+            this.Age = Age;
+            this.Email = email;
+        }
     }
 }

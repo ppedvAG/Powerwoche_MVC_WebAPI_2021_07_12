@@ -170,5 +170,11 @@ namespace ASPNETCOREMVC.Controllers
         {
             return _context.Movie.Any(e => e.Id == id);
         }
+
+        [HttpPost("/movie/buy/{id}")]
+        public IActionResult Buy(int? id)
+        {
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

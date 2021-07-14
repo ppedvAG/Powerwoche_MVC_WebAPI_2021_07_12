@@ -16,6 +16,15 @@ namespace ASPNETCOREMVC.Data
 
         public DbSet<ASPNETCOREMVC.Models.Movie> Movie { get; set; }
 
+        private void IchWillWasProgrammieren()
+        {
+            //DBSet beherrscht die selbe Funktionalität wie DBSet-Methoden
+            Movie.Add(new Models.Movie());
+            Movie.Remove(new Models.Movie());
+
+            IList<Movie> alleFilme = Movie.ToList();
+            IList<Movie> alleFilmeWithConditions =  Movie.Where(n => n.Genre == Genre.Action).ToList();
+        }
 
         #region Required
         //protected override void OnModelCreating(ModelBuilder modelBuilder)

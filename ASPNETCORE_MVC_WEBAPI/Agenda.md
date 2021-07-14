@@ -18,28 +18,27 @@ Dependency Injcetion + Konfigurationen
 - [x] Einbinden einer HotReload Middleware
 Die Controller-Klasse (MVC)
 
-- [x] QueryString bei Get-Methoden
+- [x] QueryString bei Get-Methoden + 
 - [x] Ein Formular mit mehren Buttons (Post-Methoden)
 - [x] RouteValues
 - [x] HTML-Helper (liegt in RazorSamplesController)
 - [x] TagHelpers  (liegt in RazorSamplesController)
-
 - [x] Data Annotations 
 - [x] Validierung (Client/Serverseitig)
 - [x] Gehen Geldbeträge mit Komma?
-- [x] FluentAPI erklärt (als alternative zu DataAnnotations)
+
 - [x] Bild-Upload Formular + einfache Darstellung von Bildern 
 
 - Routing (15Minuten)
 - [x] Konventionelles Routing
-- [x] Attribute Routing
-
+- [x] Attribute Routing (Templates)
 
 EF Core Einstieg 
-- [ ] Code First / Code First Reverse
-- [ ] Repository / UnitOfWork Pattern in EF
+- [x] Code First / Code First Reverse /Database First + Model First (edmx)
+- [x] Repository / UnitOfWork Pattern in EF
 - [x] Add-Migration + Update-Database im Bezug auf eine DBContext 
-
+- [x] FluentAPI 
+ 
 State-Management (1Std) 
 - [ ] Überblick über HTTPContext und Controller-Basisklasse
 - [ ] ViewData////
@@ -52,9 +51,6 @@ Weitere Views (Mittwoch)
 - [x] PartialView
 - [ ] ViewComponents & Localization -> Referenz Projekte anschauen () (20Min) 
 - [ ] Identity UI in ASP.NET Core MVC -> weitere UseCases zu PartialView (20 Min)
-
-
-
 - [ ] Middleware -> Was ist ein Pipeline (Use, Run, Map) (1 stunde)
 - [ ] Customize Middleware für formatierte Bildausgaben (Gallery)+ In Verbindung mit einem Bild-Upload-Formular
 - [ ] Filter -> https://docs.microsoft.com/de-de/aspnet/core/mvc/controllers/filters?view=aspnetcore-5.0#resource-filters
