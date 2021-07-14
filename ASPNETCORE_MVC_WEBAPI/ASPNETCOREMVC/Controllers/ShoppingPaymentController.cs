@@ -1,5 +1,6 @@
 ﻿using ASPNETCOREMVC.Data;
 using ASPNETCOREMVC.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -70,8 +71,6 @@ namespace ASPNETCOREMVC.Controllers
 
                 movies.Remove(toCancel);
 
-
-
                 if (movies.Count == 0)
                 {
                     HttpContext.Session.Remove("ShoppingCart");
@@ -86,5 +85,27 @@ namespace ASPNETCOREMVC.Controllers
 
             return RedirectToAction(nameof(ShoppingCartOverview));
         }
+
+
+        public IActionResult Payment()
+        {
+            return View();
+        }
+
+
+        //[AllowAnonymous] //In dieser Methode dürfen alle User oder Unbekannte darauf zugreifen
+        //public IActionResult AllCanAccess()
+        //{
+        //    return View();
+        //}
+
+        //[Authorize("Admins")]
+        //[Authorize("Support")]
+        //public IActionResult OnlyAdmins()
+        //{
+        //    return View();
+        //}
+
+
     }
 }

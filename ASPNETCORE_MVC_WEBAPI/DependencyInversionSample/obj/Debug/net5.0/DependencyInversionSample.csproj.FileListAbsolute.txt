@@ -9,3 +9,4 @@ C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\Depende
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\DependencyInversionSample\obj\Debug\net5.0\DependencyInversionSample.dll
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\DependencyInversionSample\obj\Debug\net5.0\ref\DependencyInversionSample.dll
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\DependencyInversionSample\obj\Debug\net5.0\DependencyInversionSample.pdb
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\DependencyInversionSample\obj\Debug\net5.0\DependencyInversionSample.csproj.AssemblyReference.cache

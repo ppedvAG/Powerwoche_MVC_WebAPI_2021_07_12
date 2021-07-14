@@ -274,3 +274,26 @@ asp-page, asp-page-handler
 2021-07-14 12:16:26.742 +02:00 [INF] Starting web host
 2021-07-14 12:16:38.268 +02:00 [INF] Zeige Home-Index an
 2021-07-14 12:16:38.284 +02:00 [ERR] Zeige Home-Index an
+2021-07-14 13:37:59.364 +02:00 [INF] Starting web host
+2021-07-14 13:38:15.322 +02:00 [INF] Zeige Home-Index an
+2021-07-14 13:38:15.369 +02:00 [ERR] Zeige Home-Index an
+2021-07-14 13:39:06.042 +02:00 [INF] User created a new account with password.
+2021-07-14 13:39:29.813 +02:00 [INF] User logged in.
+2021-07-14 13:39:29.881 +02:00 [INF] Zeige Home-Index an
+2021-07-14 13:39:29.884 +02:00 [ERR] Zeige Home-Index an
+2021-07-14 13:39:54.500 +02:00 [INF] User logged out.
+2021-07-14 13:39:54.560 +02:00 [INF] Zeige Home-Index an
+2021-07-14 13:39:54.565 +02:00 [ERR] Zeige Home-Index an
+2021-07-14 13:45:10.827 +02:00 [INF] Starting web host
+2021-07-14 13:45:24.415 +02:00 [INF] Zeige Home-Index an
+2021-07-14 13:45:24.435 +02:00 [ERR] Zeige Home-Index an
+2021-07-14 13:46:47.221 +02:00 [INF] User logged in.
+2021-07-14 13:46:47.330 +02:00 [INF] Zeige Home-Index an
+2021-07-14 13:46:47.334 +02:00 [ERR] Zeige Home-Index an
+2021-07-14 14:23:09.543 +02:00 [INF] Starting web host
+2021-07-14 14:23:28.679 +02:00 [INF] Zeige Home-Index an
+2021-07-14 14:23:28.696 +02:00 [ERR] Zeige Home-Index an
+2021-07-14 14:23:33.572 +02:00 [INF] Zeige Home-Index an
+2021-07-14 14:23:33.575 +02:00 [ERR] Zeige Home-Index an
+2021-07-14 14:23:37.646 +02:00 [INF] Zeige Home-Index an
+2021-07-14 14:23:37.652 +02:00 [ERR] Zeige Home-Index an

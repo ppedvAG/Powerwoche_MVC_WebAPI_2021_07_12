@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using Westwind.AspNetCore.LiveReload;
 using Microsoft.EntityFrameworkCore;
 using ASPNETCOREMVC.Data;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
 
 namespace ASPNETCOREMVC
 {
@@ -30,6 +33,8 @@ namespace ASPNETCOREMVC
         {
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
+
+            services.AddRazorPages();
 
             //MVC wird hier zum ASP.NET Core Projekt hinzugef�gt
             //Wenn wir AddController with View verwenden -> ben�tigt das Programm folgende Ordner:
@@ -61,6 +66,28 @@ namespace ASPNETCOREMVC
                     options.UseSqlServer(Configuration.GetConnectionString("MovieDbContext")));
 
             services.AddSession();
+            services.AddAuthentication();
+
+            services.AddLocalization();
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                 {
+                    new CultureInfo("en"),
+                    new CultureInfo("de"),
+                    new CultureInfo("fr"),
+                    //new CultureInfo("es"),
+                    //new CultureInfo("ru"),
+                    //new CultureInfo("ja"),
+                    //new CultureInfo("ar"),
+                    //new CultureInfo("zh"),
+                    //new CultureInfo("en-GB")
+                };
+                options.DefaultRequestCulture = new RequestCulture("de");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,9 +113,13 @@ namespace ASPNETCOREMVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseSession();
+
+            var localizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value;
+            app.UseRequestLocalization(localizationOptions);
 
             AppDomain.CurrentDomain.SetData("BildVerzeichnis", env.WebRootPath);
 
@@ -102,6 +133,9 @@ namespace ASPNETCOREMVC
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+                endpoints.MapRazorPages();
             });
         }
     }

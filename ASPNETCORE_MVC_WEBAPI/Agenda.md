@@ -8,7 +8,7 @@
 
 - [x] Präsentationsschicht (1 Stunde) 
 - [x] Razor-Syntax / RazorEngine 
-- [0] MVC
+- [x] MVC
 
 
 Tag2:
@@ -44,13 +44,13 @@ State-Management (1Std)
 - [x] ViewData////
 - [x] ViewBag
 - [x] TempData
-- [ ] Session-Handling -> Bauen einen Warenkorb (mit Artikel entfernen)
+- [x] Session-Handling -> Bauen einen Warenkorb (mit Artikel entfernen)
 
 
 Weitere Views (Mittwoch)
 - [x] PartialView
+- [x] Identity UI in ASP.NET Core MVC -> weitere UseCases zu PartialView (20 Min)
 - [ ] ViewComponents & Localization -> Referenz Projekte anschauen () (20Min) 
-- [ ] Identity UI in ASP.NET Core MVC -> weitere UseCases zu PartialView (20 Min)
 - [ ] Middleware -> Was ist ein Pipeline (Use, Run, Map) (1 stunde)
 - [ ] Customize Middleware für formatierte Bildausgaben (Gallery)+ In Verbindung mit einem Bild-Upload-Formular
 - [ ] Filter -> https://docs.microsoft.com/de-de/aspnet/core/mvc/controllers/filters?view=aspnetcore-5.0#resource-filters
