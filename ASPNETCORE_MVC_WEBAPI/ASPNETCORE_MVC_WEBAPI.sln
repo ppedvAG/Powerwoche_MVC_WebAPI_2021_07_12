@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceCollectionAndService
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIScopeVsTransientVsSingletonSample", "DIScopeVsTransientVsSingletonSample\DIScopeVsTransientVsSingletonSample.csproj", "{09AB8B48-3182-426B-B412-7476C52A61DC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationFiltersSample", "AuthorizationFiltersSample\AuthorizationFiltersSample.csproj", "{84014157-AECC-4750-975A-D787813EB98A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{09AB8B48-3182-426B-B412-7476C52A61DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09AB8B48-3182-426B-B412-7476C52A61DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09AB8B48-3182-426B-B412-7476C52A61DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84014157-AECC-4750-975A-D787813EB98A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84014157-AECC-4750-975A-D787813EB98A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84014157-AECC-4750-975A-D787813EB98A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84014157-AECC-4750-975A-D787813EB98A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

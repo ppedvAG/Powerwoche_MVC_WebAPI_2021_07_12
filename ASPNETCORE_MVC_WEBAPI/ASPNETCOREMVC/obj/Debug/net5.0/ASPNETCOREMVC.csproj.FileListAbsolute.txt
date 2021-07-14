@@ -528,3 +528,5 @@ C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETC
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\Photo\FormattedPictureGallery.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\ActionFilterSample\Read.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\ActionFilterSample\Edit.cshtml.g.cs
