@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ASPNETCOREMVC.Data;
 using ASPNETCOREMVC.Models;
+using Microsoft.AspNetCore.Http;
+using System.Text.Json;
 
 namespace ASPNETCOREMVC.Controllers
 {
@@ -174,6 +176,34 @@ namespace ASPNETCOREMVC.Controllers
         [HttpPost("/movie/buy/{id}")]
         public IActionResult Buy(int? id)
         {
+
+
+            if (!id.HasValue)
+                return BadRequest();
+
+            if (HttpContext.Session.IsAvailable)
+            {
+                List<int> idList = new List<int>();
+
+                //Gibt es schon einen Warenkorb Objekt für meine Session 
+                if (HttpContext.Session.Keys.Contains("ShoppingCart"))
+                {
+                    //Wenn ja, wurde schon einmal was gekauft und der Session-Eintrag exisitiert
+
+                    string jsonIdList = HttpContext.Session.GetString("ShoppingCart");
+
+                    //befüllte idList mit existierenden Einkäufe
+                    idList = JsonSerializer.Deserialize<List<int>>(jsonIdList);
+                }
+
+                idList.Add(id.Value);
+
+                string jsonString = JsonSerializer.Serialize(idList);
+
+                HttpContext.Session.SetString("ShoppingCart", jsonString);
+            }
+
+
             return RedirectToAction(nameof(Index));
         }
     }

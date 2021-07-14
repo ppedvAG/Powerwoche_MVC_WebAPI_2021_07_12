@@ -40,10 +40,10 @@ EF Core Einstieg
 - [x] FluentAPI 
  
 State-Management (1Std) 
-- [ ] Überblick über HTTPContext und Controller-Basisklasse
-- [ ] ViewData////
-- [ ] ViewBag
-- [ ] TempData
+- [x] Überblick über HTTPContext und Controller-Basisklasse
+- [x] ViewData////
+- [x] ViewBag
+- [x] TempData
 - [ ] Session-Handling -> Bauen einen Warenkorb (mit Artikel entfernen)
 
 

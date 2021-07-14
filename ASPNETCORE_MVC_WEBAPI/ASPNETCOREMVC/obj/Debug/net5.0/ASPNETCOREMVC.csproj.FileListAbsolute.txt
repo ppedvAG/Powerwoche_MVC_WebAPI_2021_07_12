@@ -475,3 +475,5 @@ C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETC
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\StateManagement\TempDataSecondSample.cshtml.g.cs
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\StateManagement\TempDataThirdSample.cshtml.g.cs
 C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\StateManagement\SessionStart.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\StateManagement\SessionResult.cshtml.g.cs
+C:\Aktueller Kurs\Powerwoche_MVC_WebAPI_2021_07_12\ASPNETCORE_MVC_WEBAPI\ASPNETCOREMVC\obj\Debug\net5.0\Razor\Views\ShoppingPayment\ShoppingCartOverview.cshtml.g.cs

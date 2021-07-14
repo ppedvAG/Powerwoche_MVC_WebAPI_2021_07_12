@@ -54,7 +54,8 @@ namespace ASPNETCOREMVC.Controllers
             //Ab ASP.NET Core 3.0 verwenden wird den System.Text.Json; JsonSerializer
             //Vor ASP.NET Core war Newtonsoft - Serialsier verwendet worden. 
             string jsonString = JsonSerializer.Serialize(person);
-
+            HttpContext.Session.SetString("PersonObj", jsonString);
+            
             return View();
         }
 
@@ -62,6 +63,9 @@ namespace ASPNETCOREMVC.Controllers
         {
             int? lottozahlen = HttpContext.Session.GetInt32("Lottozahlen");
             string name = HttpContext.Session.GetString("Lottogewinner");
+
+            string jsonString = HttpContext.Session.GetString("PersonObj");
+            Person person = JsonSerializer.Deserialize<Person>(jsonString);
 
             return View();
         }
