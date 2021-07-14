@@ -79,6 +79,10 @@
               "target": "Package",
               "version": "[4.1.0, )"
             },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
             "Westwind.AspNetCore.LiveReload": {
               "target": "Package",
               "version": "[0.3.2, )"

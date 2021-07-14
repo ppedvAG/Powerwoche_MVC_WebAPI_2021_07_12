@@ -16,6 +16,8 @@ using ASPNETCOREMVC.Data;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Http;
+using ASPNETCOREMVC.Middleware;
 
 namespace ASPNETCOREMVC
 {
@@ -112,17 +114,70 @@ namespace ASPNETCOREMVC
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseRequestLocalization(app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value);
 
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseSession();
 
-            var localizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value;
-            app.UseRequestLocalization(localizationOptions);
+            
+           
 
             AppDomain.CurrentDomain.SetData("BildVerzeichnis", env.WebRootPath);
 
+
+            #region CustomizeMiddleware
+            #region Sample1
+            //Use verwendet next() und verkettete somit. 
+            //app.Use(async (context, next) =>
+            //{
+            //    //Request Part
+            //    //await context.Response.WriteAsync("Vor Invoke from 1st app.Use()\n");
+            //    await next();
+            //    //Response Part
+            //    //await context.Response.WriteAsync("Nach Invoke from 1st app.Use()\n");
+            //});
+
+            //app.Use(async (context, next) =>
+            //{
+            //    //Request Part
+            //    //await context.Response.WriteAsync("Vor Invoke from 2nd app.Use()\n");
+            //    await next();
+            //    //Response Part
+            //    //await context.Response.WriteAsync("Nach Invoke from 2nd app.Use()\n");
+            //});
+            #endregion
+
+
+
+
+            #region Sample 2
+            //Request                         Response
+            //https://localhost:5001/        Hello from app.Run()
+            //https://localhost:5001/m1      Hello from 1st app.Map()
+            //https://localhost:5001/m1/xyz  Hello from 1st app.Map()
+            //https://localhost:5001/m2      Hello from 2nd app.Map()
+            //https://localhost:5001/m500    Hello from app.Run()
+            app.Map("/m1", HandleMapOne);
+            app.Map("/m2", appMap =>
+            {
+                appMap.Run(async context =>
+                {
+                    await context.Response.WriteAsync("Hello from 2nd app.Map()");
+                });
+            });
+            #endregion
+
+            #region Tumbnail Middleware
+            app.MapWhen(context => context.Request.Path.ToString().Contains("imagegen"), subapp =>
+            {
+                subapp.UseThumbnailGen();
+            });
+
+            #endregion
+
+            #endregion
             // Wenn wir AddControllersWithViews verwenden, ben�tigen wir f�r MVC Request folgenden Endpoint. 
             app.UseEndpoints(endpoints =>
             {
@@ -136,6 +191,17 @@ namespace ASPNETCOREMVC
 
 
                 endpoints.MapRazorPages();
+            });
+        }
+
+
+
+        private static void HandleMapOne(IApplicationBuilder app)
+        {
+            //Run Terminiert eine Middleware- Das Request wird nicht mehr weitergereicht 
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Hello from 1st app.Map");
             });
         }
     }
