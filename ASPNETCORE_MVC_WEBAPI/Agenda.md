@@ -51,12 +51,12 @@ Weitere Views (Mittwoch)
 - [x] PartialView
 - [x] Identity UI in ASP.NET Core MVC -> weitere UseCases zu PartialView (20 Min)
 - [x] ViewComponents & Localization -> Referenz Projekte anschauen () (20Min) 
-- [ ] Middleware -> Was ist ein Pipeline (Use, Run, Map, MapWhen) (1 stunde)
-- [ ] Customize Middleware für formatierte Bildausgaben (Gallery)+ In Verbindung mit einem Bild-Upload-Formular
+- [x] Middleware -> Was ist ein Pipeline (Use, Run, Map, MapWhen) (1 stunde)
+- [x] Customize Middleware für formatierte Bildausgaben (Gallery)+ In Verbindung mit einem Bild-Upload-Formular
 
 
-- [ ] Filter -> https://docs.microsoft.com/de-de/aspnet/core/mvc/controllers/filters?view=aspnetcore-5.0#resource-filters
-- [ ] AuthorisationFilter Sample (Read and Write Sample)
+- [x] Filter -> https://docs.microsoft.com/de-de/aspnet/core/mvc/controllers/filters?view=aspnetcore-5.0#resource-filters
+- [x] AuthorisationFilter Sample (Read and Write Sample)
 
 
 

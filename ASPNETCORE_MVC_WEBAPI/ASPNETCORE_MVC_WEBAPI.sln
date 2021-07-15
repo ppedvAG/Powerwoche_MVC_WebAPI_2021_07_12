@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Agenda.md = Agenda.md
 		LinkCollection.txt = LinkCollection.txt
+		QuestionAnswer.md = QuestionAnswer.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInversionSample", "DependencyInversionSample\DependencyInversionSample.csproj", "{F74086EA-68FE-4E59-865A-991CBCADD4B7}"
@@ -18,6 +19,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIScopeVsTransientVsSingletonSample", "DIScopeVsTransientVsSingletonSample\DIScopeVsTransientVsSingletonSample.csproj", "{09AB8B48-3182-426B-B412-7476C52A61DC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationFiltersSample", "AuthorizationFiltersSample\AuthorizationFiltersSample.csproj", "{84014157-AECC-4750-975A-D787813EB98A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASPNETCOREMVCKURS", "ASPNETCOREMVCKURS", "{B2422E00-0D11-457A-BB78-A1C70550109A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETCORE_WebAPI", "ASPNETCORE_WebAPI\ASPNETCORE_WebAPI.csproj", "{7F071B25-2C80-4487-B132-4F7547888635}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +50,20 @@ Global
 		{84014157-AECC-4750-975A-D787813EB98A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84014157-AECC-4750-975A-D787813EB98A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84014157-AECC-4750-975A-D787813EB98A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F071B25-2C80-4487-B132-4F7547888635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F071B25-2C80-4487-B132-4F7547888635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F071B25-2C80-4487-B132-4F7547888635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F071B25-2C80-4487-B132-4F7547888635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F74086EA-68FE-4E59-865A-991CBCADD4B7} = {B2422E00-0D11-457A-BB78-A1C70550109A}
+		{6070D9F1-676F-4280-97AA-59F8DEA72C81} = {B2422E00-0D11-457A-BB78-A1C70550109A}
+		{39ED6B29-087F-43D3-BE27-FBCF8BEE26B5} = {B2422E00-0D11-457A-BB78-A1C70550109A}
+		{09AB8B48-3182-426B-B412-7476C52A61DC} = {B2422E00-0D11-457A-BB78-A1C70550109A}
+		{84014157-AECC-4750-975A-D787813EB98A} = {B2422E00-0D11-457A-BB78-A1C70550109A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E295CFA6-AD25-46FD-86DD-F4E77553CFA4}
