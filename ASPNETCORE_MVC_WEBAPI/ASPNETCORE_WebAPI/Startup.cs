@@ -13,6 +13,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.Extensions.Options;
+
+
+
 
 namespace ASPNETCORE_WebAPI
 {
@@ -30,7 +35,12 @@ namespace ASPNETCORE_WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //Web API Funktionaltität - Benötigt das Verzeichnis Controllers
-            services.AddControllers(); //Endpoint: endpoints.MapControllers();
+           /* services.AddControllers(); *///Endpoint: endpoints.MapControllers();
+
+            services.AddControllers(options =>
+            {
+                options.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
+            });
 
             // Swagger UI - zum Testen der WebAPI Methoden
             services.AddSwaggerGen(c =>
@@ -68,6 +78,24 @@ namespace ASPNETCORE_WebAPI
             {
                 endpoints.MapControllers();
             });
+        }
+
+
+
+        private static NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter()
+        {
+            var builder = new ServiceCollection()
+                .AddLogging()
+                .AddMvc()
+                .AddNewtonsoftJson()
+                .Services.BuildServiceProvider();
+
+            return builder
+                .GetRequiredService<IOptions<MvcOptions>>()
+                .Value
+                .InputFormatters
+                .OfType<NewtonsoftJsonPatchInputFormatter>()
+                .First();
         }
     }
 }

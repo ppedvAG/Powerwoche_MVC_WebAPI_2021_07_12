@@ -27,9 +27,46 @@ namespace ASPNETCORE_WebAPI.Controllers
         /// Eine Einfache Synchrone Methode
         /// </summary>
         /// <returns></returns>
+        /// 
+        
+        [HttpGet]
         public List<Movie> GetAll()
         {
             return _ctx.Movies.ToList();
+        }
+
+        
+        
+        
+        [HttpGet("{id}")]
+       
+        public Movie GetById(int id)
+        {
+            Movie movie = _ctx.Movies.Find(id);
+
+            if (movie == null)
+                return null;
+
+            return movie;
+        }
+
+
+        //HTTP Verbs können auch kombiniert werden -> ist Swagger komform
+        [HttpPost]
+        [HttpPut]
+        public void AddMoviePost(Movie movie)
+        {
+            if (movie.Id == default)
+            {
+                _ctx.Movies.Add(movie);
+                _ctx.SaveChanges();
+            }
+            else
+            {
+                _ctx.Update(movie);
+                _ctx.SaveChanges();
+            }
+            
         }
     }
 }
