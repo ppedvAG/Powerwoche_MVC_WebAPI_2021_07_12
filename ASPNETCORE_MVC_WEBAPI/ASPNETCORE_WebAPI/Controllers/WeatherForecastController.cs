@@ -37,5 +37,12 @@ namespace ASPNETCORE_WebAPI.Controllers
             })
             .ToArray();
         }
+
+
+        [HttpGet("error")]
+        public IActionResult GetError() //Beispiel Referenz -> https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/web-api/advanced/formatting/5.0samples/WebAPI5PascalCase
+        {
+            return Problem("Something went wrong!");
+        } //RFC 7807 -> https://tools.ietf.org/html/rfc7807#appendix-A
     }
 }

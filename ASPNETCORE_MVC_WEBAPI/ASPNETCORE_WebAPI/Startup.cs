@@ -35,12 +35,23 @@ namespace ASPNETCORE_WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //Web API Funktionaltität - Benötigt das Verzeichnis Controllers
-           /* services.AddControllers(); *///Endpoint: endpoints.MapControllers();
+            /* services.AddControllers(); *///Endpoint: endpoints.MapControllers();
 
             services.AddControllers(options =>
             {
                 options.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
-            });
+
+                //Beispiel Browser und Inhaltsaushandlung
+                //options.RespectBrowserAcceptHeader = true; // false by default
+
+
+
+
+            })
+                .AddXmlSerializerFormatters() //Hinzufügen von Unterstützung für das XML-Format
+                .AddJsonOptions(options => //Konfigurieren System.Text.Json von basierten Formatierern
+                    options.JsonSerializerOptions.PropertyNamingPolicy = null); //Die Standardformatierung ist camelCase. Der folgende hervorgehobene Code legt die PascalCase-Formatierung fest:
+
 
             // Swagger UI - zum Testen der WebAPI Methoden
             services.AddSwaggerGen(c =>

@@ -29,15 +29,21 @@ namespace ASPNETCORE_WebAPI.Controllers
         /// <returns></returns>
         /// 
         
-        [HttpGet]
+        [HttpGet("GetAllMovies")]
         public List<Movie> GetAll()
         {
             return _ctx.Movies.ToList();
         }
 
-        
-        
-        
+        [HttpGet("GetAllMoviesB")]
+        public List<Movie> GetAllB()
+        {
+            return _ctx.Movies.ToList();
+        }
+
+
+
+
         [HttpGet("{id}")]
        
         public Movie GetById(int id)
