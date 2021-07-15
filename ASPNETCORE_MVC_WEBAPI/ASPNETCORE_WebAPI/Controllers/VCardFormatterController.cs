@@ -22,5 +22,12 @@ namespace ASPNETCORE_WebAPI.Controllers
 
             return contact;
         }
+
+
+        [HttpPost]
+        public IActionResult Insert(Contact contact)
+        {
+            return Ok();
+        }
     }
 }

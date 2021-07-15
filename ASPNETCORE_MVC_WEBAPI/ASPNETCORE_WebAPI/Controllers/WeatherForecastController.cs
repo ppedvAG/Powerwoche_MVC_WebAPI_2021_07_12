@@ -24,7 +24,7 @@ namespace ASPNETCORE_WebAPI.Controllers
         }
 
 
-        
+
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -36,6 +36,18 @@ namespace ASPNETCORE_WebAPI.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet("{city}")]
+        public WeatherForecast Get(string city)
+        {
+            if (!string.Equals(city?.TrimEnd(), "Redmond", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new ArgumentException(
+                    $"we dont offer a weather forecast for {city}.", nameof(city));
+            }
+
+            return Get().First();
         }
 
 

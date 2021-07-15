@@ -18,6 +18,7 @@ using Microsoft.Extensions.Options;
 using WebApiContrib.Core.Formatter.Csv;
 using WebApiContrib.Core.Formatter.Bson;
 using ASPNETCORE_WebAPI.Formatters;
+using ASPNETCORE_WebAPI.Services;
 
 namespace ASPNETCORE_WebAPI
 {
@@ -40,7 +41,7 @@ namespace ASPNETCORE_WebAPI
             services.AddControllers(options =>
             {
                 //options.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
-
+                options.InputFormatters.Insert(0, new VCardInputFormatter());
                 options.OutputFormatters.Insert(0, new VCardOutputFormatter());
                 //Beispiel Browser und Inhaltsaushandlung
                 //options.RespectBrowserAcceptHeader = true; // false by default
@@ -69,6 +70,9 @@ namespace ASPNETCORE_WebAPI
             {
                 options.UseInMemoryDatabase("MovieDB");
             });
+
+
+            services.AddScoped<IVideoStreamService, VideoStreamService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,10 +80,16 @@ namespace ASPNETCORE_WebAPI
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
+                app.UseExceptionHandler("/error-local-development");
+                
+                
                 app.UseSwagger();
-
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ASPNETCORE_WebAPI v1"));
+            }
+            else
+            {
+                app.UseExceptionHandler("/error");
             }
 
             app.UseHttpsRedirection();
