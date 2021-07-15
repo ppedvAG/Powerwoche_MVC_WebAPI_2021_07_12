@@ -63,15 +63,15 @@ Weitere Views (Mittwoch)
 
 WebAPI:
 
-- [ ] Projektaufbau 
-  - [ ] ControllerBase in aspnetcore Sourcecode
-- [ ] HTTP-Methoden (Get / Post / Put / Delete)
-- [ ] HttpVerbs in Verbindung mit Swagger
+- [x] Projektaufbau 
+  - [x] ControllerBase in aspnetcore Sourcecode
+- [x] HTTP-Methoden (Get / Post / Put / Delete)
+- [x] HttpVerbs in Verbindung mit Swagger (Methoden Kombination POST/PUT)
 - [ ] HttpClient
 - [ ] OpenAPI-SwaggerUI-swagger.json
-  - [ ] Koventionsprobleme mit Swagger.json und WebAPI-Konventionen
+  - [x] Koventionsprobleme mit Swagger.json und WebAPI-Konventionen
 - [ ] Client mit Swagger.json (Aktuell kann es zu Bugs in VS kommen)
-- [ ] Formatter (BJSON, XML) ->XMLBug -> XMLFormatterSerializer nich global angeboten
+- [x] Formatter (BJSON, XML)
 - [ ] Customize Formatter (VCARD)
 - [ ] Migration von MVC & WebAPI von 4.8 auf ASP.NET Core
 - [ ] Content Negotation

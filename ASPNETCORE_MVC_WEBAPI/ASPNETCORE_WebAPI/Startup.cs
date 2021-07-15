@@ -15,9 +15,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Options;
-
-
-
+using WebApiContrib.Core.Formatter.Csv;
+using WebApiContrib.Core.Formatter.Bson;
+using ASPNETCORE_WebAPI.Formatters;
 
 namespace ASPNETCORE_WebAPI
 {
@@ -39,8 +39,9 @@ namespace ASPNETCORE_WebAPI
 
             services.AddControllers(options =>
             {
-                options.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
+                //options.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
 
+                options.OutputFormatters.Insert(0, new VCardOutputFormatter());
                 //Beispiel Browser und Inhaltsaushandlung
                 //options.RespectBrowserAcceptHeader = true; // false by default
 
@@ -49,6 +50,8 @@ namespace ASPNETCORE_WebAPI
 
             })
                 .AddXmlSerializerFormatters() //Hinzufügen von Unterstützung für das XML-Format
+                .AddCsvSerializerFormatters() //Hinzufügen eines CSV Serializer 
+                .AddBsonSerializerFormatters()
                 .AddJsonOptions(options => //Konfigurieren System.Text.Json von basierten Formatierern
                     options.JsonSerializerOptions.PropertyNamingPolicy = null); //Die Standardformatierung ist camelCase. Der folgende hervorgehobene Code legt die PascalCase-Formatierung fest:
 
