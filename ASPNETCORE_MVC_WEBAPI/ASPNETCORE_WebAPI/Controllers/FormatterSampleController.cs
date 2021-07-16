@@ -1,4 +1,5 @@
 ﻿using ASPNETCORE_WebAPI.Data;
+using ASPNETCORE_WebAPI.Data.Repository;
 using ASPNETCORE_WebAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,9 +15,14 @@ namespace ASPNETCORE_WebAPI.Controllers
     public class FormatterSampleController : ControllerBase
     {
         private readonly MovieDbContext _ctx;
-        public FormatterSampleController(MovieDbContext ctx)
+
+
+        private readonly ProductsRepository _repository;
+
+        public FormatterSampleController(MovieDbContext ctx, ProductsRepository repository)
         {
             _ctx = ctx;
+            _repository = repository;
         }
 
        
@@ -73,7 +79,20 @@ namespace ASPNETCORE_WebAPI.Controllers
 
 
 
+        #region Zuordnung des Antwortformats durch URLs
 
+        ///api/FormatterSample/5	  Standard-Ausgabeformatierungsprogramm
+        ///api/FormatterSample/5.json JSON-Formatierungsprogramm (falls konfiguriert)
+        //api/FormatterSample/5.xml   XML-Formatierungsprogramm  (falls konfiguriert
+
+        [HttpGet("{id}.{format?}")]
+        public Product Get(int id)
+        {
+
+
+            return new Product();
+        }
+        #endregion
 
     }
 }

@@ -14,45 +14,62 @@ namespace ASPNETCORE_WebAPI.Controllers
     [ApiController]
     public class PatchSampleController : ControllerBase
     {
-        //[HttpPatch]
-        //public IActionResult JsonPatchWithModelState([FromBody] JsonPatchDocument<Customer> patchDoc)
-        //{
-        //    if (patchDoc != null)
-        //    {
-        //        Customer customer = CreateCustomer();
-
-        //        patchDoc.ApplyTo(customer, ModelState);
-
-        //        if (!ModelState.IsValid)
-        //        {
-        //            return BadRequest(ModelState);
-        //        }
-
-        //        return new ObjectResult(customer);
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //}
-
         [HttpPatch]
-        public IActionResult JsonPatchForDynamic([FromBody] JsonPatchDocument patch)
+        public IActionResult JsonPatchWithModelState([FromBody] JsonPatchDocument<Customer> patchDoc)
         {
-            dynamic obj = new ExpandoObject();
-            patch.ApplyTo(obj);
+            if (patchDoc != null)
+            {
+                Customer customer = CreateCustomer();
 
-            return Ok(obj);
+                //customer wird auf attribut ebene manipliert (add/remove/replace/move) 
+                patchDoc.ApplyTo(customer, ModelState);
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                return new ObjectResult(customer);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
         }
+
+        [HttpGet]
+        public IActionResult JsonPatchWithModelState()
+        {
+            var customer = CreateCustomer();
+            return new ObjectResult(customer);
+        }
+
+        //[HttpPatch]
+        //public IActionResult JsonPatchForDynamic([FromBody] JsonPatchDocument patch)
+        //{
+        //    dynamic obj = new ExpandoObject();
+        //    patch.ApplyTo(obj);
+
+        //    return Ok(obj);
+        //}
 
         private Customer CreateCustomer()
         {
-
-            List<Order> orderList = new List<Order>();
-            orderList.Add(new Order { OrderName = "Kaffee", OrderType = "online" });
-            orderList.Add(new Order { OrderName = "Wasser", OrderType = "online" });
-            orderList.Add(new Order { OrderName = "Tee", OrderType = "online" });
-            return new Customer { CustomerName = "Max Mustermann", Orders = orderList };
+            return new Customer
+            {
+                CustomerName = "John",
+                Orders = new List<Order>()
+                {
+                    new Order
+                    {
+                        OrderName = "Order0"
+                    },
+                    new Order
+                    {
+                        OrderName = "Order1"
+                    }
+                }
+            };
         }
     }
 }

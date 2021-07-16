@@ -19,6 +19,7 @@ using WebApiContrib.Core.Formatter.Csv;
 using WebApiContrib.Core.Formatter.Bson;
 using ASPNETCORE_WebAPI.Formatters;
 using ASPNETCORE_WebAPI.Services;
+using ASPNETCORE_WebAPI.Data.Repository;
 
 namespace ASPNETCORE_WebAPI
 {
@@ -43,6 +44,10 @@ namespace ASPNETCORE_WebAPI
                 //options.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
                 options.InputFormatters.Insert(0, new VCardInputFormatter());
                 options.OutputFormatters.Insert(0, new VCardOutputFormatter());
+
+
+                options.InputFormatters.Insert(1, GetJsonPatchInputFormatter());
+
                 //Beispiel Browser und Inhaltsaushandlung
                 //options.RespectBrowserAcceptHeader = true; // false by default
 
@@ -52,10 +57,11 @@ namespace ASPNETCORE_WebAPI
             })
                 .AddXmlSerializerFormatters() //Hinzufügen von Unterstützung für das XML-Format
                 .AddCsvSerializerFormatters() //Hinzufügen eines CSV Serializer 
-                .AddBsonSerializerFormatters()
+                .AddBsonSerializerFormatters() //Macht Probleme
                 .AddJsonOptions(options => //Konfigurieren System.Text.Json von basierten Formatierern
                     options.JsonSerializerOptions.PropertyNamingPolicy = null); //Die Standardformatierung ist camelCase. Der folgende hervorgehobene Code legt die PascalCase-Formatierung fest:
 
+            services.AddScoped<ProductsRepository>();
 
             // Swagger UI - zum Testen der WebAPI Methoden
             services.AddSwaggerGen(c =>
@@ -69,6 +75,11 @@ namespace ASPNETCORE_WebAPI
             services.AddDbContext<MovieDbContext>(options =>
             {
                 options.UseInMemoryDatabase("MovieDB");
+            });
+
+            services.AddDbContext<ProductContext>(options =>
+            {
+                options.UseInMemoryDatabase("ProductDB");
             });
 
 

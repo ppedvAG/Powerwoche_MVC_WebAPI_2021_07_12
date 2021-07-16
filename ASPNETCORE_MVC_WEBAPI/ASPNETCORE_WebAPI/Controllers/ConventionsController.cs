@@ -32,6 +32,13 @@ namespace ASPNETCORE_WebAPI.Controllers
             return _ctx.Movies.ToList();
         }
 
+        #region Beispiel Prefix / Suffix Konventions
+        // Die auf die Methode angewendete Option Microsoft.AspNetCore.Mvc.ApiExplorer.ApiConventionNameMatchBehavior.
+        // Prefix gibt an, dass die Konvention für jede Aktion gilt, die das Präfix „Find“ hat. Beispiele für übereinstimmende Aktionen sind Find, FindPet und FindById.
+
+
+        // Die auf den Parameter angewendete Option Microsoft.AspNetCore.Mvc.ApiExplorer.ApiConventionNameMatchBehavior.
+        // Suffix gibt an, dass die Konvention für jede Methode gilt, die genau einen Parameter hat, der mit dem Suffix „id“ endet.
         [HttpGet("{id}")]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         [ApiConventionNameMatch(ApiConventionNameMatchBehavior.Prefix)]
@@ -44,6 +51,8 @@ namespace ASPNETCORE_WebAPI.Controllers
 
             return movie;
         }
+        #endregion
+
 
         [HttpPost]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]

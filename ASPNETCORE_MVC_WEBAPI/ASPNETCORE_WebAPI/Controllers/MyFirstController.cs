@@ -45,7 +45,6 @@ namespace ASPNETCORE_WebAPI.Controllers
 
 
         [HttpGet("{id}")]
-       
         public Movie GetById(int id)
         {
             Movie movie = _ctx.Movies.Find(id);

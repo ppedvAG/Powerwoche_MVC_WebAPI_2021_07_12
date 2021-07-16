@@ -67,20 +67,26 @@ WebAPI:
   - [x] ControllerBase in aspnetcore Sourcecode
 - [x] HTTP-Methoden (Get / Post / Put / Delete)
 - [x] HttpVerbs in Verbindung mit Swagger (Methoden Kombination POST/PUT)
-- [ ] HttpClient
+
 - [ ] OpenAPI-SwaggerUI-swagger.json
   - [x] Koventionsprobleme mit Swagger.json und WebAPI-Konventionen
-- [ ] Client mit Swagger.json (Aktuell kann es zu Bugs in VS kommen)
+
 - [x] Formatter (BJSON, XML)
-- [ ] Customize Formatter (VCARD)
+- [x] Customize Formatter (VCARD)
 - [ ] Migration von MVC & WebAPI von 4.8 auf ASP.NET Core
+- [x] Broadcast Videoübertragung via WebAPI
+- [ ] PATCH Methode implementieren 
+
+- [ ] HttpClient
+- [ ] Client mit Swagger.json (Aktuell kann es zu Bugs in VS kommen)
 - [ ] Content Negotation
-- [ ] Datei übertragn mit WebAPI?
-- [ ] Broadcast Videoübertragung via WebAPI
-- [ ] WebAPI + EFCore + MVC als Client
+
 - [ ] Pagging u. weitere WebAPI Features -> Skip/Take für PAging / Sorting und Filtering
 - [ ] ODATA 8 (beta)  -> Beispiel Odata-Service Implementierung. 
 - [ ] Architekturen -> Hateoas + DataShapping + OData 
+
+- [ ] Datei übertragn mit WebAPI?
+- [ ] WebAPI + EFCore + MVC als Client
 
 
 

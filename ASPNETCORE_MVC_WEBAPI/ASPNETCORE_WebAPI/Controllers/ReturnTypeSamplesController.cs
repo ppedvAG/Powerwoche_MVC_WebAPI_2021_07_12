@@ -1,7 +1,9 @@
 ﻿using ASPNETCORE_WebAPI.Data;
+using ASPNETCORE_WebAPI.Data.Repository;
 using ASPNETCORE_WebAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +19,12 @@ namespace ASPNETCORE_WebAPI.Controllers
         private readonly MovieDbContext _ctx;
 
 
-        public ReturnTypeSamplesController(MovieDbContext ctx)
+        private readonly ProductsRepository _repository;
+
+        public ReturnTypeSamplesController(MovieDbContext ctx, ProductsRepository repository)
         {
             _ctx = ctx;
+            _repository = repository;
         }
 
 
@@ -35,13 +40,29 @@ namespace ASPNETCORE_WebAPI.Controllers
             }
         }
 
+        #region snippet_GetOnSaleProductsAsync
+        [HttpGet("asyncsale")]
+        public async IAsyncEnumerable<Product> GetOnSaleProductsAsync()
+        {
+            var products = _repository.GetProductsAsync();
+
+            await foreach (var product in products)
+            {
+                if (product.IsOnSale)
+                {
+                    yield return product;
+                }
+            }
+        }
+        #endregion
+
 
 
 
 
         #region asynchrone Methoden + CreatedAtAction -> Beispiel gibt ein angelegtes Movie Object mit Id-Key zurück
 
-        //
+
         [HttpPost("CreateMovie")]
         public async Task<IActionResult> CreateMovieAsync(Movie movie)
         {

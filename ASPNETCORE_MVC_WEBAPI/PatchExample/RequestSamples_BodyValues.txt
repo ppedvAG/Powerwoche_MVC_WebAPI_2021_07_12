@@ -1,0 +1,83 @@
+﻿//https://www.c-sharpcorner.com/article/json-patch-in-asp-net-core-web-api/
+
+
+The add operation
+[  
+  {  
+    "op": "add",  
+    "path": "/customerName",  
+    "value": "Barry"  
+  },  
+  {  
+    "op": "add",  
+    "path": "/orders/-",  
+    "value": {  
+      "orderName": "Order2",  
+      "orderType": null  
+    }  
+  }  
+] 
+
+
+The remove operation
+[  
+  {  
+    "op": "remove",  
+    "path": "/customerName"  
+  },  
+  {  
+    "op": "remove",  
+    "path": "/orders/0"  
+  }  
+] 
+
+
+The replace operation
+[  
+  {  
+    "op": "replace",  
+    "path": "/customerName",  
+    "value": "Barry"  
+  },  
+  {  
+    "op": "replace",  
+    "path": "/orders/0",  
+    "value": {  
+      "orderName": "Order2",  
+      "orderType": null  
+    }  
+  }  
+] 
+
+
+
+The move operation
+[  
+  {  
+    "op": "move",  
+    "from": "/orders/0/orderName",  
+    "path": "/customerName"  
+  },  
+  {  
+    "op": "move",  
+    "from": "/orders/1",  
+    "path": "/orders/0"  
+  }  
+] 
+
+
+
+
+Copy operator
+[  
+  {  
+    "op": "copy",  
+    "from": "/orders/0/orderName",  
+    "path": "/customerName"  
+  },  
+  {  
+    "op": "copy",  
+    "from": "/orders/1",  
+    "path": "/orders/0"  
+  }  
+] 
