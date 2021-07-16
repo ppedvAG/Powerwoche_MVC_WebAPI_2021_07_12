@@ -74,7 +74,8 @@ namespace ASPNETCORE_WebAPI
 
             services.AddDbContext<MovieDbContext>(options =>
             {
-                options.UseInMemoryDatabase("MovieDB");
+            //options.UseInMemoryDatabase("MovieDB");
+                options.UseSqlServer(Configuration.GetConnectionString("MovieDbContext"));
             });
 
             services.AddDbContext<ProductContext>(options =>

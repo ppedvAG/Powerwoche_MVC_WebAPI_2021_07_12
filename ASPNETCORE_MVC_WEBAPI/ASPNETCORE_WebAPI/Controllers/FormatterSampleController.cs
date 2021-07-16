@@ -34,6 +34,15 @@ namespace ASPNETCORE_WebAPI.Controllers
         }
 
 
+        [HttpGet("GetMoviesById/{Id}")]
+        public Movie GetById (int Id)
+        {
+            return _ctx.Movies.Find(Id);
+        }
+
+
+
+
         [HttpGet("GetMovieString")] //Rückgabe Format: content-type: text/plain; charset=utf-8 
         public string GetMovieString()
         {

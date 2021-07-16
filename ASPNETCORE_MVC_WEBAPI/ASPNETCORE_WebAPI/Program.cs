@@ -34,18 +34,15 @@ namespace ASPNETCORE_WebAPI
             using (var scope = scopeFactory.CreateScope())
             {
                 MovieDbContext ctx = scope.ServiceProvider.GetRequiredService<MovieDbContext>();
-
-                if (ctx.Database.EnsureCreated())
+                
+                try
                 {
-                    try
-                    {
-                        SeedData.Init(ctx);
-                    }
-                    catch (Exception ex)
-                    {
-                        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-                        logger.LogError(ex, "A database seeding error occurred.");
-                    }
+                    SeedData.Init(ctx);
+                }
+                catch (Exception ex)
+                {
+                    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "A database seeding error occurred.");
                 }
             }
         }

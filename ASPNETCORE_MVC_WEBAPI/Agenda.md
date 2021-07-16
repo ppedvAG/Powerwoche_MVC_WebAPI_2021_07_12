@@ -68,18 +68,19 @@ WebAPI:
 - [x] HTTP-Methoden (Get / Post / Put / Delete)
 - [x] HttpVerbs in Verbindung mit Swagger (Methoden Kombination POST/PUT)
 
-- [ ] OpenAPI-SwaggerUI-swagger.json
+- [x] OpenAPI-SwaggerUI-swagger.json
   - [x] Koventionsprobleme mit Swagger.json und WebAPI-Konventionen
 
 - [x] Formatter (BJSON, XML)
 - [x] Customize Formatter (VCARD)
 - [ ] Migration von MVC & WebAPI von 4.8 auf ASP.NET Core
 - [x] Broadcast Videoübertragung via WebAPI
-- [ ] PATCH Methode implementieren 
+- [x] PATCH Methode implementieren 
 
-- [ ] HttpClient
+
 - [ ] Client mit Swagger.json (Aktuell kann es zu Bugs in VS kommen)
-- [ ] Content Negotation
+- [x] HttpClient
+- [x] Content Negotation (HTTP Client fordert XML an)
 
 - [ ] Pagging u. weitere WebAPI Features -> Skip/Take für PAging / Sorting und Filtering
 - [ ] ODATA 8 (beta)  -> Beispiel Odata-Service Implementierung. 

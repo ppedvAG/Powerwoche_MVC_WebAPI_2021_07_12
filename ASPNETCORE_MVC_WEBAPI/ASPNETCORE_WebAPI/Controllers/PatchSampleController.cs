@@ -29,6 +29,8 @@ namespace ASPNETCORE_WebAPI.Controllers
                     return BadRequest(ModelState);
                 }
 
+                //Hier kann man den Datensatz mit EFCore als Update verarbeiten 
+
                 return new ObjectResult(customer);
             }
             else
