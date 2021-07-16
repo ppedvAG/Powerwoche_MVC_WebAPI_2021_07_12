@@ -17,5 +17,4 @@
     <PackageReference Include="WebApiContrib.Core.Formatter.Bson" Version="2.1.0" />
     <PackageReference Include="WebApiContrib.Core.Formatter.Csv" Version="4.0.0" />
   </ItemGroup>
-
 </Project>

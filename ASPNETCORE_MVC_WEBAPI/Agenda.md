@@ -78,11 +78,11 @@ WebAPI:
 - [x] PATCH Methode implementieren 
 
 
-- [ ] Client mit Swagger.json (Aktuell kann es zu Bugs in VS kommen)
+- [x] Client mit Swagger.json (Aktuell kann es zu mehreren Bugs in VS kommen + Generierte C# Code ist mehrfach bugy)
 - [x] HttpClient
 - [x] Content Negotation (HTTP Client fordert XML an)
 
-- [ ] Pagging u. weitere WebAPI Features -> Skip/Take für PAging / Sorting und Filtering
+- [x] Pagging u. weitere WebAPI Features -> Skip/Take für PAging / Sorting und Filtering
 - [ ] ODATA 8 (beta)  -> Beispiel Odata-Service Implementierung. 
 - [ ] Architekturen -> Hateoas + DataShapping + OData 
 
