@@ -5,3 +5,14 @@ CodeFirst Reverse: https://docs.microsoft.com/de-de/ef/core/managing-schemas/sca
 Repository Library -> https://github.com/SharpRepository/SharpRepository
 
 Ein schmales und schickes Repository Pattern: https://code-maze.com/net-core-web-development-part4/
+
+
+WebAPI-HATEOAS:
+https://code-maze.com/hateoas-aspnet-core-web-api/
+
+Data Shapping:
+https://code-maze.com/data-shaping-aspnet-core-webapi/
+
+https://code-maze.com/filtering-aspnet-core-webapi/
+
+https://code-maze.com/aspnetcore-webapi-best-practices/

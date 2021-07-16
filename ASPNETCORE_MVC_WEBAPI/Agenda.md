@@ -73,7 +73,6 @@ WebAPI:
 
 - [x] Formatter (BJSON, XML)
 - [x] Customize Formatter (VCARD)
-- [ ] Migration von MVC & WebAPI von 4.8 auf ASP.NET Core
 - [x] Broadcast Videoübertragung via WebAPI
 - [x] PATCH Methode implementieren 
 
@@ -83,11 +82,11 @@ WebAPI:
 - [x] Content Negotation (HTTP Client fordert XML an)
 
 - [x] Pagging u. weitere WebAPI Features -> Skip/Take für PAging / Sorting und Filtering
+- [x] Response Caching
+- [x] Architekturen -> Hateoas + DataShapping + OData
 - [ ] ODATA 8 (beta)  -> Beispiel Odata-Service Implementierung. 
-- [ ] Architekturen -> Hateoas + DataShapping + OData 
-
 - [ ] Datei übertragn mit WebAPI?
-- [ ] WebAPI + EFCore + MVC als Client
+- [x] WebAPI + EFCore + MVC als Client
 
 
 

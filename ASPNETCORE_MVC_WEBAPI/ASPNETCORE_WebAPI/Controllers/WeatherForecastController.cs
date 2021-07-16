@@ -26,6 +26,7 @@ namespace ASPNETCORE_WebAPI.Controllers
 
 
         [HttpGet]
+        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new[] { "impactlevel", "pii" })]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

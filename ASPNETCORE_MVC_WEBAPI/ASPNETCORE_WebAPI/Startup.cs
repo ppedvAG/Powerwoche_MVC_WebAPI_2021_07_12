@@ -71,6 +71,7 @@ namespace ASPNETCORE_WebAPI
                 //c.SwaggerDoc("v2", new OpenApiInfo { Title = "ASPNETCORE_WebAPI", Version = "v2" });
             });
 
+            services.AddResponseCaching();
 
             services.AddDbContext<MovieDbContext>(options =>
             {
@@ -110,6 +111,7 @@ namespace ASPNETCORE_WebAPI
 
             app.UseAuthorization();
 
+            app.UseResponseCaching();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
